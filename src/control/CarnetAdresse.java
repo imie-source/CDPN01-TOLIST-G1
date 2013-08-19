@@ -41,11 +41,11 @@ public class CarnetAdresse extends HttpServlet {
 					iab.addPerson(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
 
 			}else if("supprimer".equals(request.getParameter("action"))){
-				iab.removePersonne(request.getParameter("id"));
+				iab.removePerson(request.getParameter("id"));
 
 			}else if("modifier".equals(request.getParameter("action"))){
 				Personne per = new Personne(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
-				iab.modifierPersonne(request.getParameter("id"),per);
+				iab.modifierPerson(request.getParameter("id"),per);
 			}
 
 		}
