@@ -19,4 +19,14 @@
     <servlet-name>CarnetAdresse</servlet-name>
     <url-pattern>/CarnetAdresse</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Carnet</display-name>
+    <servlet-name>Carnet</servlet-name>
+    <servlet-class>control.Carnet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Carnet</servlet-name>
+    <url-pattern>/Carnet</url-pattern>
+  </servlet-mapping>
 </web-app>
