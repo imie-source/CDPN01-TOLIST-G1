@@ -5,6 +5,12 @@ public class Personne {
 	private String prenom;
 	private String telephone;
 	private String dateNaissance;
+    public Personne(String nom, String prenom, String telephone, String dateNaissance) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.telephone = telephone;
+        this.dateNaissance = dateNaissance;
+    }
 	public String getNom() {
 		return nom;
 	}
