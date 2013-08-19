@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.ArrayList" %>    
 <%@ page import="java.util.List" %>
 <%@ page import="modele.Personne" %>
@@ -24,7 +24,7 @@
 <div id ="tableauBean">
 	<tr>
 		<td>Nom</td>
-		<td>Prénom</td>
+		<td>Prï¿½nom</td>
 		<td>Telephone</td>
 		<td>Anniversaire</td>
 		<td>Action</td>
