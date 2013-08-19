@@ -2,7 +2,10 @@ package controller;
 
 import modele.Personne;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class IMIEAddressBook implements AddressBook {
 
