@@ -41,7 +41,7 @@ public class CarnetAdresse extends HttpServlet {
 					String id=null;
 					id=iab.addPerson(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
 					if(id!=null){
-						request.setAttribute("message","Creation effectu�e avec succés");
+						request.setAttribute("message","Creation effectuée avec succés");
 					}else{
 						request.setAttribute("message","Echec de la création");
 						request.setAttribute("error",001);//Code erreur création de personne
