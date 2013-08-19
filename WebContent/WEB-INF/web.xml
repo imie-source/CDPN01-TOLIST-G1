@@ -11,12 +11,12 @@
   </welcome-file-list>
   <servlet>
     <description></description>
-    <display-name>Todo</display-name>
-    <servlet-name>Todo</servlet-name>
-    <servlet-class>control.Todo</servlet-class>
+    <display-name>CarnetAdresse</display-name>
+    <servlet-name>CarnetAdresse</servlet-name>
+    <servlet-class>control.CarnetAdresse</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Todo</servlet-name>
-    <url-pattern>/Todo</url-pattern>
+    <servlet-name>CarnetAdresse</servlet-name>
+    <url-pattern>/CarnetAdresse</url-pattern>
   </servlet-mapping>
 </web-app>
