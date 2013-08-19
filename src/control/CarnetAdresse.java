@@ -27,7 +27,7 @@ public class CarnetAdresse extends HttpServlet {
 		super();
 		iab.addPerson("Bob", "Morane", "0000000000", "12/09/2000");
 		iab.addPerson("Bob", "le bricoleur", "0123456789", "12/08/2000");
-		iab.addPerson("Bob", "l'�ponge", "6666666666", "");
+		iab.addPerson("Bob", "l'éponge", "6666666666", "");
 	}
 
 	/**
@@ -37,17 +37,24 @@ public class CarnetAdresse extends HttpServlet {
 
 		if(request.getParameter("action")!=null){
 			if("ajouter".equals(request.getParameter("action"))){
-				if(request.getParameter("nom")!=null&&request.getParameter("prenom")!=null&&request.getParameter("telephone")!=null&&request.getParameter("dateNaissance")!=null)
-					iab.addPerson(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
+				if(request.getParameter("nom")!=null&&request.getParameter("prenom")!=null&&request.getParameter("telephone")!=null&&request.getParameter("dateNaissance")!=null) {
+					String id=null;
+					id=iab.addPerson(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
+					if(id!=null){
+						request.setAttribute("message","Creation effectu�e avec succés");
+					}else{
+						request.setAttribute("message","Echec de la création");
+						request.setAttribute("error",001);//Code erreur création de personne
+					}
+				}else if("supprimer".equals(request.getParameter("action"))){
+					iab.removePerson(request.getParameter("id"));
 
-			}else if("supprimer".equals(request.getParameter("action"))){
-				iab.removePerson(request.getParameter("id"));
+				}else if("modifier".equals(request.getParameter("action"))){
+					Personne per = new Personne(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
+					iab.modifierPerson(request.getParameter("id"),per);
+				}
 
-			}else if("modifier".equals(request.getParameter("action"))){
-				Personne per = new Personne(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
-				iab.modifierPerson(request.getParameter("id"),per);
 			}
-
 		}
 		request.setAttribute("carnet",iab.getPeople());
 		renvoyer("index.jsp",request,response);
