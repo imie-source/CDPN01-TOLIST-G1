@@ -27,7 +27,7 @@ public class CarnetAdresse extends HttpServlet {
 		super();
 		iab.addPerson("Bob", "Morane", "0000000000", "12/09/2000");
 		iab.addPerson("Bob", "le bricoleur", "0123456789", "12/08/2000");
-		iab.addPerson("Bob", "l'éponge", "6666666666", "");
+		iab.addPerson("Bob", "l'Ã©ponge", "6666666666", "");
 	}
 
 	/**
@@ -41,10 +41,10 @@ public class CarnetAdresse extends HttpServlet {
 					String id=null;
 					id=iab.addPerson(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
 					if(id!=null){
-						request.setAttribute("message","Creation effectuée avec succés");
+						request.setAttribute("message","Creation effectuï¿½e avec succÃ©s");
 					}else{
-						request.setAttribute("message","Echec de la création");
-						request.setAttribute("error",001);//Code erreur création de personne
+						request.setAttribute("message","Echec de la crÃ©ation");
+						request.setAttribute("error",001);//Code erreur crÃ©ation de personne
 					}
 				}else if("supprimer".equals(request.getParameter("action"))){
 					iab.removePerson(request.getParameter("id"));
