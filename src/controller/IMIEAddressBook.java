@@ -3,19 +3,33 @@ package controller;
 import modele.Personne;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 public class IMIEAddressBook implements AddressBook {
 
-    private static List<Personne> people = new ArrayList<Personne>();
+    private static Map<String, Personne> people = new HashMap<String, Personne>();
 
     @Override
-    public List<Personne> getPeople() {
-        return new ArrayList<Personne>(people);
+    public Collection<Personne> getPeople() {
+        return new ArrayList<Personne>(people.values());
     }
 
     @Override
-    public void addPerson(String nom, String prenom, String telephone, String dateNaissance) {
-        people.add(new Personne(nom, prenom, telephone, dateNaissance));
+    public String addPerson(String nom, String prenom, String telephone, String dateNaissance) {
+        Personne person = new Personne(nom, prenom, telephone, dateNaissance);
+        people.put(person.getId(), person);
+        return person.getId();
+    }
+
+    @Override
+    public void removePerson(String id) {
+        people.remove(id);
+    }
+
+    @Override
+    public void modifierPerson(String id, Personne person) {
+        people.put(id, person);
     }
 }

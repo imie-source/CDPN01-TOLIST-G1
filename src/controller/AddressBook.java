@@ -2,10 +2,15 @@ package controller;
 
 import modele.Personne;
 
-import java.util.List;
+import java.util.Collection;
 
 public interface AddressBook {
 
-    List<Personne> getPeople();
-    void addPerson(String nom, String prenom, String telephone, String dateNaissance);
+    Collection<Personne> getPeople();
+
+    String addPerson(String nom, String prenom, String telephone, String dateNaissance);
+
+    void removePerson(String id);
+
+    void modifierPerson(String id, Personne person);
 }
