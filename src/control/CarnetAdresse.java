@@ -27,7 +27,7 @@ public class CarnetAdresse extends HttpServlet {
 		super();
 		iab.addPerson("Bob", "Morane", "0000000000", "12/09/2000");
 		iab.addPerson("Bob", "le bricoleur", "0123456789", "12/08/2000");
-		iab.addPerson("Bob", "l'éponge", "6666666666", "");
+		iab.addPerson("Bob", "l'éponge", "6666666666", "21/12/2012");
 	}
 
 	/**
@@ -46,6 +46,7 @@ public class CarnetAdresse extends HttpServlet {
 						request.setAttribute("message","Echec de la création");
 						request.setAttribute("error",001);//Code erreur création de personne
 					}
+				}
 				}else if("supprimer".equals(request.getParameter("action"))){
 					iab.removePerson(request.getParameter("id"));
 
@@ -54,10 +55,10 @@ public class CarnetAdresse extends HttpServlet {
 					iab.modifierPerson(request.getParameter("id"),per);
 				}
 
-			}
+			
 		}
-		
-		
+
+
 		request.setAttribute("carnet",iab.getPeople());
 		renvoyer("index.jsp",request,response);
 

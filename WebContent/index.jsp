@@ -24,7 +24,14 @@
   </style>
 </head>
 <body>
+<%
+if(request.getAttribute("message")!=null){
+	%>
+	<%=request.getAttribute("message") %>
+	<%
+}
 
+%>
 <button id="ajouter">Ajouter</button>
 <table id ="tableauBean">
 	<tr>
@@ -47,13 +54,14 @@
     	<td><button class="supp">Supprimer</button><button class="modif">Modifier</button></td>
     </tr>    
     <%}%>
-    <tr>
-    	<td class="cache"><input type="text" id="new_id" name="new_id"/></td>
-    	<td class="cache"><input type="text" id="new_nom" name="new_nom"/></td>
-    	<td class="cache"><input type="text" id="new_prenom" name="new_prenom"/> </td>
-    	<td class="cache"><input type="text" id="new_tel" name="new_tel"/></td>
-    	<td class="cache"><input type="text" id="new_dateNaissance" name="new_dateNaissance"/></td>
-    	<td class="cache"><button class="save">Sauvegarder</button></td>
+    <tr><form method="GET" action="CarnetAdresse" class="cache">
+    	<td ><input type="text" id="new_id" name="new_id"/></td>
+    	<td ><input type="text" id="new_nom" name="new_nom"/></td>
+    	<td><input type="text" id="new_prenom" name="new_prenom"/> </td>
+    	<td ><input type="text" id="new_tel" name="new_tel"/></td>
+    	<td ><input type="text" id="new_dateNaissance" name="new_dateNaissance"/></td>
+    	<td ><button class="save" name="action" value="ajouter">Sauvegarder</button></td>
+    	</form>
     </tr>
 </table>
 
