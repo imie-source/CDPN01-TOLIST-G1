@@ -1,0 +1,67 @@
+version = '1.0.0-SNAPSHOT'
+
+defaultTasks 'war'
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'jacoco'
+sourceCompatibility  = 1.6
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src'
+        }
+    }
+    test {
+        java {
+            srcDir 'test'
+        }
+        resources {
+            srcDir 'test'
+        }
+    }
+    
+}
+war.dependsOn test
+war{
+  from 'WebContent'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //compile 'org.jboss.spec.javax.jms:jboss-jms-api_1.1_spec:1.0.1.Final'
+    providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.0.Final'
+    testCompile group: 'junit', name: 'junit', version: '4.+'
+    //testCompile group: 'org.postgresql', name: 'postgresql', version: '9.2-1003-jdbc4'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+    //testCompile 'org.dbunit:dbunit:2.4.8'
+    //testCompile 'commons-io:commons-io:1.4'
+    //testCompile 'log4j:log4j:1.2.16'
+    //testCompile 'org.slf4j:slf4j-log4j12:1.5.6'
+    //testCompile 'org.hsqldb:hsqldb:2.2.8'
+    //compile 'org.ajoberstar:gradle-jacoco:0.3.0'
+    //compile group: 'commons-collections', name: 'commons-collections', version: '3.2'
+    //compile 'org.apache.struts:struts2-core:2.3.1.2'
+    //compile 'struts:struts:1.2.9'
+} 
+
+import org.ajoberstar.gradle.jacoco.tasks.*
+
+task jacocoReport(type: JacocoReport) {
+    // can include one or more execution files
+    executionData test
+
+    // specify one or more source sets that you want to report on the coverage of
+    sourceSets project.sourceSets.main
+
+    // can also specify additional class and source dirs
+    // additionalClassDirs moreStuff
+    // additionalSourceDirs moreSourceStuff
+}
