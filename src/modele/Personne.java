@@ -40,7 +40,6 @@ public class Personne {
 
 	public void setId(String id) {
 		// TODO Auto-generated method stub
-		this.id=id;
-		
+		this.id=id;	
 	}
 }

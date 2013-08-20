@@ -52,13 +52,13 @@ public class CarnetAdresse extends HttpServlet {
 	public void traiter (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		if(request.getParameter("action")!=null){
 			if("Ajouter".equals(request.getParameter("action"))){
-				String nom = request.getParameter("new_nom").toString();
-				String prenom = request.getParameter("new_prenom").toString();
-				String telephone = request.getParameter("new_telephone").toString();
-				String dateNaissance = request.getParameter("new_dateNaissance").toString();
+				String nom = request.getParameter("new_nom");
+				String prenom = request.getParameter("new_prenom");
+				String telephone = request.getParameter("new_telephone");
+				String dateNaissance = request.getParameter("new_dateNaissance");
 				if(nom!=null&&prenom!=null&&telephone!=null&&dateNaissance!=null) {
 					String id=null;
-					id=iab.addPerson(request.getParameter("new_nom").toString(), request.getParameter("new_prenom").toString(), request.getParameter("new_telephone").toString(), request.getParameter("new_dateNaissance").toString());
+					id=iab.addPerson(nom, prenom, telephone, dateNaissance);
 					if(id!=null){
 						request.setAttribute("message","Creation effectuée avec succés");
 					}else{

@@ -13,15 +13,6 @@
 	src="./jsLib/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
 
 <title>Insert title here</title>
-<style type="text/css">
-.cache {
-	display: none;
-}
-
-.visible {
-	display: block;
-}
-</style>
 </head>
 <body>
 	<script type="text/javascript">
@@ -52,23 +43,16 @@ if(request.getAttribute("message")!=null){
 			<td>Action</td>
 		</tr>
 		<%
-			List<Personne> liste = (ArrayList<Personne>) request
-					.getAttribute("carnet");
+			List<Personne> liste = (ArrayList<Personne>) request.getAttribute("carnet");
 			for (int i = 0; i < liste.size(); i++) {
 		%>
 		<tr>
 			<form id="form_<%=liste.get(i).getId()%>" method="POST">
-	    	<td><input type="text" id="id_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getId() %>" name="id" readonly/></td>
-					value="<%=liste.get(i).getId()%>" name="id" disabled /></td>
-				<td><input type="text" id="nom_<%=liste.get(i).getId()%>"
-	    	<td><input type="text" id="tel_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getTelephone() %>" name ="telephone"/></td>
-				<td><input type="text" id="prenom_<%=liste.get(i).getId()%>"
-					value="<%=liste.get(i).getPrenom()%>" name="prenom" /></td>
-				<td><input type="text" id="tel_<%=liste.get(i).getId()%>"
-					value="<%=liste.get(i).getTelephone()%>" name="telephone>" /></td>
-				<td><input type="text"
-					id="dateNaissance_<%=liste.get(i).getId()%>"
-					value="<%=liste.get(i).getDateNaissance()%>" name="dateNaissance" /></td>
+	    		<td><input type="text" id="id_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getId() %>" name="id" readonly/></td>
+				<td><input type="text" id="nom_<%=liste.get(i).getId()%>" value="<%=liste.get(i).getNom()%>" name="nom"/></td>
+				<td><input type="text" id="prenom_<%=liste.get(i).getId()%>" value="<%=liste.get(i).getPrenom()%>" name="prenom" /></td>
+	    		<td><input type="text" id="tel_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getTelephone() %>" name ="telephone"/></td>
+				<td><input type="text" 	id="dateNaissance_<%=liste.get(i).getId()%>" value="<%=liste.get(i).getDateNaissance()%>" name="dateNaissance" /></td>
 				<td><input type="submit" name="action" value="Supprimer">
 					<input type="submit" name="action" value="Modifier"></td>
 			</form>
@@ -76,17 +60,18 @@ if(request.getAttribute("message")!=null){
 		<%
 			}
 		%>
-    	<form id="new_form" method="POST" action="CarnetAdresse">
 		<tr id="add_row">
+    		<form id="new_form" method="POST" >
+			
 				<td><input type="text" id="new_id" name="new_id" /></td>
 				<td><input type="text" id="new_nom" name="new_nom" /></td>
 				<td><input type="text" id="new_prenom" name="new_prenom" /></td>
-    	<td><input type="text" id="new_telephone" name="new_telephone"/></td>
-				<td><input type="text" id="new_dateNaissance"
-    	<td ><button  name="action" value="Ajouter" >Sauvegarder</button></td>
-				<td><input type="submit" name="action" value="Sauvegarder" /></td>
+    			<td><input type="text" id="new_telephone" name="new_telephone"/></td>
+				<td><input type="text" id="new_dateNaissance" name="new_dateNaissance" /> </td>
+    			<td ><button  name="action" value="Ajouter" >Sauvegarder</button></td>		
 			</form>
 		</tr>
+		
 	</table>
 	<img id="button_add" src="./add.png" />
 
