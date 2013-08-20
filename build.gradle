@@ -24,7 +24,11 @@ sourceSets {
     }
     
 }
-
+war {
+    from 'WebContent' // adds a file-set to the root of the archive
+    webInf { from 'WebContent/WEB-INF' } // adds a file-set to the WEB-INF dir.
+    webXml = file('WebContent/WEB-INF/web.xml') // copies a file to WEB-INF/web.xml
+}
 
 repositories {
     mavenCentral()
