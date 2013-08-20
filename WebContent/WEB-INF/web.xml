@@ -4,7 +4,7 @@
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>CarnetAdresse</welcome-file>
     <welcome-file>default.html</welcome-file>
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
@@ -18,15 +18,5 @@
   <servlet-mapping>
     <servlet-name>CarnetAdresse</servlet-name>
     <url-pattern>/CarnetAdresse</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
-    <display-name>Carnet</display-name>
-    <servlet-name>Carnet</servlet-name>
-    <servlet-class>control.CarnetAdresse</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Carnet</servlet-name>
-    <url-pattern>/Carnet</url-pattern>
   </servlet-mapping>
 </web-app>
