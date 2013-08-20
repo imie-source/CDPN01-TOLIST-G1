@@ -61,15 +61,15 @@ public class CarnetAdresse extends HttpServlet {
 						request.setAttribute("message","Echec de la création");
 						request.setAttribute("error",001);//Code erreur création de personne
 					}
-				}else if("Supprimer".equals(request.getParameter("action"))){
-					iab.removePerson(request.getParameter("id"));
-
-				}else if("Modifier".equals(request.getParameter("action"))){
-					Personne per = new Personne(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
-					iab.modifierPerson(request.getParameter("id"),per);
 				}
+			}else if("Supprimer".equals(request.getParameter("action"))){
+				iab.removePerson(request.getParameter("id"));
 
+			}else if("Modifier".equals(request.getParameter("action"))){
+				Personne per = new Personne(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
+				iab.modifierPerson(request.getParameter("id"),per);
 			}
+
 		}
 		
 		
