@@ -34,9 +34,24 @@ public class CarnetAdresse extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		traiter(request,response);
+	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		traiter(request,response);
+	}
+	private void renvoyer(String url,HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException{
+		RequestDispatcher rd = request.getRequestDispatcher(url);
+		rd.forward(request, response);
+	}
+	
+	public void traiter (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		if(request.getParameter("action")!=null){
-			if("ajouter".equals(request.getParameter("action"))){
+			if("Ajouter".equals(request.getParameter("action"))){
 				if(request.getParameter("new_nom")!=null&&request.getParameter("new_prenom")!=null&&request.getParameter("new_telephone")!=null&&request.getParameter("new_dateNaissance")!=null) {
 					String id=null;
 					id=iab.addPerson(request.getParameter("new_nom").toString(), request.getParameter("new_prenom").toString(), request.getParameter("new_telephone").toString(), request.getParameter("new_dateNaissance").toString());
@@ -46,11 +61,15 @@ public class CarnetAdresse extends HttpServlet {
 						request.setAttribute("message","Echec de la création");
 						request.setAttribute("error",001);//Code erreur création de personne
 					}
+<<<<<<< HEAD
 				}
 				}else if("supprimer".equals(request.getParameter("action"))){
+=======
+				}else if("Supprimer".equals(request.getParameter("action"))){
+>>>>>>> ae8fb23d701d820ad43c6135e19ae710e6188f4b
 					iab.removePerson(request.getParameter("id"));
 
-				}else if("modifier".equals(request.getParameter("action"))){
+				}else if("Modifier".equals(request.getParameter("action"))){
 					Personne per = new Personne(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
 					iab.modifierPerson(request.getParameter("id"),per);
 				}
@@ -62,18 +81,6 @@ public class CarnetAdresse extends HttpServlet {
 		request.setAttribute("carnet",iab.getPeople());
 		renvoyer("index.jsp",request,response);
 
-	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-	private void renvoyer(String url,HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException{
-		RequestDispatcher rd = request.getRequestDispatcher(url);
-		rd.forward(request, response);
 	}
 
 }
