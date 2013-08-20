@@ -39,7 +39,7 @@
     for ( int i = 0; i < liste.size(); i++ ) {
     %>
     <tr>
-    	<td><input type="text" id="id_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getId() %>" name="id_<%=liste.get(i).getId() %>"/></td>
+    	<td><input type="text" id="id_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getId() %>" name="id_<%=liste.get(i).getId() %>" disabled/></td>
     	<td><input type="text" id="nom_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getNom() %>" name ="nom_<%=liste.get(i).getNom() %>"/></td>
     	<td><input type="text" id="prenom_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getPrenom() %>" name ="prenom_<%=liste.get(i).getPrenom() %>"/> </td>
     	<td><input type="text" id="tel_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getTelephone() %>" name ="tel_<%=liste.get(i).getTelephone() %>"/></td>
