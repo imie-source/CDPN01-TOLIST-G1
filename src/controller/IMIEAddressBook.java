@@ -30,6 +30,7 @@ public class IMIEAddressBook implements AddressBook {
 
     @Override
     public void modifierPerson(String id, Personne person) {
+    	people.remove(id);
         people.put(id, person);
     }
 }

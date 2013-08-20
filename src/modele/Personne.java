@@ -37,4 +37,10 @@ public class Personne {
     public String getDateNaissance() {
         return this.dateNaissance;
     }
+
+	public void setId(String id) {
+		// TODO Auto-generated method stub
+		this.id=id;
+		
+	}
 }

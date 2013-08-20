@@ -71,7 +71,9 @@ public class CarnetAdresse extends HttpServlet {
 
 			}else if("Modifier".equals(request.getParameter("action"))){
 				Personne per = new Personne(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
-				iab.modifierPerson(request.getParameter("id"),per);
+				String id = request.getParameter("id");
+				per.setId(id);
+				iab.modifierPerson(id,per);
 			}
 
 		}
