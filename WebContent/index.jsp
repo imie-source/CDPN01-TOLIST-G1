@@ -8,9 +8,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript"
-	src="/WebContent/WEB-INF/jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
+	src="./jsLib/jquery-ui-1.10.3.custom/js/jquery-1.9.1.js"></script>
 <script type="text/javascript"
-	src="/WebContent/WEB-INF/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
+	src="./jsLib/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.js"></script>
 
 <title>Insert title here</title>
  <style type="text/css">
