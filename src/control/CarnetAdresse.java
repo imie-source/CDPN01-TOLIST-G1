@@ -48,7 +48,7 @@ public class CarnetAdresse extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher(url);
 		rd.forward(request, response);
 	}
-	
+
 	public void traiter (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		if(request.getParameter("action")!=null){
 			if("Ajouter".equals(request.getParameter("action"))){
@@ -61,12 +61,7 @@ public class CarnetAdresse extends HttpServlet {
 						request.setAttribute("message","Echec de la création");
 						request.setAttribute("error",001);//Code erreur création de personne
 					}
-<<<<<<< HEAD
-				}
-				}else if("supprimer".equals(request.getParameter("action"))){
-=======
 				}else if("Supprimer".equals(request.getParameter("action"))){
->>>>>>> ae8fb23d701d820ad43c6135e19ae710e6188f4b
 					iab.removePerson(request.getParameter("id"));
 
 				}else if("Modifier".equals(request.getParameter("action"))){
@@ -74,13 +69,15 @@ public class CarnetAdresse extends HttpServlet {
 					iab.modifierPerson(request.getParameter("id"),per);
 				}
 
-			
+
+			}
+
+
+			request.setAttribute("carnet",iab.getPeople());
+			renvoyer("index.jsp",request,response);
+
 		}
-
-
-		request.setAttribute("carnet",iab.getPeople());
-		renvoyer("index.jsp",request,response);
-
 	}
-
 }
+
+
