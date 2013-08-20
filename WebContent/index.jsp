@@ -47,10 +47,10 @@ if(request.getAttribute("message")!=null){
     %>
     <tr>
     	<form id="form_<%=liste.get(i).getId() %>" method="POST">
-	    	<td><input type="text" id="id_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getId() %>" name="id" disabled/></td>
+	    	<td><input type="text" id="id_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getId() %>" name="id" readonly/></td>
 	    	<td><input type="text" id="nom_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getNom() %>" name ="nom"/></td>
 	    	<td><input type="text" id="prenom_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getPrenom() %>" name ="prenom"/> </td>
-	    	<td><input type="text" id="tel_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getTelephone() %>" name ="telephone>"/></td>
+	    	<td><input type="text" id="tel_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getTelephone() %>" name ="telephone"/></td>
 	    	<td><input type="text" id="dateNaissance_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getDateNaissance() %>" name ="dateNaissance"/></td>
 	    	<td><input type="submit" name="action" value = "Supprimer">
 	    	<input type="submit" name="action" value="Modifier" ></td>
