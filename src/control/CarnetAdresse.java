@@ -56,6 +56,8 @@ public class CarnetAdresse extends HttpServlet {
 
 			}
 		}
+		
+		
 		request.setAttribute("carnet",iab.getPeople());
 		renvoyer("index.jsp",request,response);
 

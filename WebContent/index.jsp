@@ -34,7 +34,7 @@
 		<td>Anniversaire</td>
 		<td>Action</td>
 	</tr>
-	<% List<Personne> liste = (ArrayList<Personne>)request.getAttribute("listePersonne"); 
+	<% List<Personne> liste = (ArrayList<Personne>)request.getAttribute("carnet"); 
     for ( int i = 0; i < liste.size(); i++ ) {
     %>
     <tr>
