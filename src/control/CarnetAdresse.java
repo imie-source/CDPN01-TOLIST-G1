@@ -37,9 +37,9 @@ public class CarnetAdresse extends HttpServlet {
 
 		if(request.getParameter("action")!=null){
 			if("ajouter".equals(request.getParameter("action"))){
-				if(request.getParameter("nom")!=null&&request.getParameter("prenom")!=null&&request.getParameter("telephone")!=null&&request.getParameter("dateNaissance")!=null) {
+				if(request.getParameter("new_nom")!=null&&request.getParameter("new_prenom")!=null&&request.getParameter("new_telephone")!=null&&request.getParameter("new_dateNaissance")!=null) {
 					String id=null;
-					id=iab.addPerson(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
+					id=iab.addPerson(request.getParameter("new_nom").toString(), request.getParameter("new_prenom").toString(), request.getParameter("new_telephone").toString(), request.getParameter("new_dateNaissance").toString());
 					if(id!=null){
 						request.setAttribute("message","Creation effectuée avec succés");
 					}else{
