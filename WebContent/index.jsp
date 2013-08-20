@@ -28,6 +28,7 @@
 <button id="ajouter">Ajouter</button>
 <table id ="tableauBean">
 	<tr>
+		<td>ID</td>
 		<td>Nom</td>
 		<td>Prénom</td>
 		<td>Telephone</td>
@@ -38,19 +39,21 @@
     for ( int i = 0; i < liste.size(); i++ ) {
     %>
     <tr>
-    	<td><input type="text" id="nom_<%=i %>" value="<%=liste.get(i).getNom() %>" /></td>
-    	<td><input type="text" id="prenom_<%=i %>" value="<%=liste.get(i).getPrenom() %>" /> </td>
-    	<td><input type="text" id="tel_<%=i %>" value="<%=liste.get(i).getTelephone() %>"/></td>
-    	<td><input type="text" id="dateNaissance_<%=i %>" value="<%=liste.get(i).getDateNaissance() %>" /></td>
+    	<td><input type="text" id="id_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getId() %>" name="id_<%=liste.get(i).getId() %>"/></td>
+    	<td><input type="text" id="nom_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getNom() %>" name ="nom_<%=liste.get(i).getNom() %>"/></td>
+    	<td><input type="text" id="prenom_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getPrenom() %>" name ="prenom_<%=liste.get(i).getPrenom() %>"/> </td>
+    	<td><input type="text" id="tel_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getTelephone() %>" name ="tel_<%=liste.get(i).getTelephone() %>"/></td>
+    	<td><input type="text" id="dateNaissance_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getDateNaissance() %>" name ="dateNaissance_<%=liste.get(i).getDateNaissance() %>"/></td>
     	<td><button class="supp">Supprimer</button><button class="modif">Modifier</button></td>
     </tr>    
     <%}%>
     <tr>
-    	<td class="cache"><input type="text" id="new_nom" /></td>
-    	<td class="cache"><input type="text" id="new_prenom" /> </td>
-    	<td class="cache"><input type="text" id="new_tel" /></td>
-    	<td class="cache"><input type="text" id="new_dateNaissance" /></td>
-    	<td class="cache"><button class="supp"></button><button class="modif"></button></td>
+    	<td class="cache"><input type="text" id="new_id" name="new_id"/></td>
+    	<td class="cache"><input type="text" id="new_nom" name="new_nom"/></td>
+    	<td class="cache"><input type="text" id="new_prenom" name="new_prenom"/> </td>
+    	<td class="cache"><input type="text" id="new_tel" name="new_tel"/></td>
+    	<td class="cache"><input type="text" id="new_dateNaissance" name="new_dateNaissance"/></td>
+    	<td class="cache"><button class="save">Sauvegarder</button></td>
     </tr>
 </table>
 
