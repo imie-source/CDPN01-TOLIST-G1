@@ -52,7 +52,11 @@ public class CarnetAdresse extends HttpServlet {
 	public void traiter (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		if(request.getParameter("action")!=null){
 			if("Ajouter".equals(request.getParameter("action"))){
-				if(request.getParameter("new_nom")!=null&&request.getParameter("new_prenom")!=null&&request.getParameter("new_telephone")!=null&&request.getParameter("new_dateNaissance")!=null) {
+				String nom = request.getParameter("new_nom").toString();
+				String prenom = request.getParameter("new_prenom").toString();
+				String telephone = request.getParameter("new_telephone").toString();
+				String dateNaissance = request.getParameter("new_dateNaissance").toString();
+				if(nom!=null&&prenom!=null&&telephone!=null&&dateNaissance!=null) {
 					String id=null;
 					id=iab.addPerson(request.getParameter("new_nom").toString(), request.getParameter("new_prenom").toString(), request.getParameter("new_telephone").toString(), request.getParameter("new_dateNaissance").toString());
 					if(id!=null){
@@ -77,11 +81,8 @@ public class CarnetAdresse extends HttpServlet {
 		renvoyer("index.jsp",request,response);
 
 
-			request.setAttribute("carnet",iab.getPeople());
-			renvoyer("index.jsp",request,response);
-
 		}
-	}
+	
 }
 
 

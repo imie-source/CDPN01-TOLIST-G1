@@ -62,7 +62,7 @@ if(request.getAttribute("message")!=null){
     	<td class="cache"><input type="text" id="new_id" name="new_id"/></td>
     	<td class="cache"><input type="text" id="new_nom" name="new_nom"/></td>
     	<td class="cache"><input type="text" id="new_prenom" name="new_prenom"/> </td>
-    	<td class="cache"><input type="text" id="new_tel" name="new_tel"/></td>
+    	<td class="cache"><input type="text" id="new_telephone" name="new_tel"/></td>
     	<td class="cache"><input type="text" id="new_dateNaissance" name="new_dateNaissance"/></td>
     	<td class="cache"><input type="submit" name="action" value="Sauvegarder" /></td>
     	</form>
