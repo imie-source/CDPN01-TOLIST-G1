@@ -24,24 +24,17 @@
 </style>
 </head>
 <body>
+<<<<<<< HEAD
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#add_row').hide();
 			$('#button_add').click(function() {
 				$('#add_row').show();
 				$('#button_add').hide();
-
 			});
 		});
 	</script>
-<%
-if(request.getAttribute("message")!=null){
-	%>
-	<%=request.getAttribute("message") %>
-	<%
-}
 
-%>
 	<table id="tableauBean">
 		<tr>
 			<td>ID</td>
@@ -58,10 +51,10 @@ if(request.getAttribute("message")!=null){
 		%>
 		<tr>
 			<form id="form_<%=liste.get(i).getId()%>" method="POST">
-	    	<td><input type="text" id="id_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getId() %>" name="id" readonly/></td>
+				<td><input type="text" id="id_<%=liste.get(i).getId()%>"
 					value="<%=liste.get(i).getId()%>" name="id" disabled /></td>
 				<td><input type="text" id="nom_<%=liste.get(i).getId()%>"
-	    	<td><input type="text" id="tel_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getTelephone() %>" name ="telephone"/></td>
+					value="<%=liste.get(i).getNom()%>" name="nom" /></td>
 				<td><input type="text" id="prenom_<%=liste.get(i).getId()%>"
 					value="<%=liste.get(i).getPrenom()%>" name="prenom" /></td>
 				<td><input type="text" id="tel_<%=liste.get(i).getId()%>"
@@ -76,19 +69,65 @@ if(request.getAttribute("message")!=null){
 		<%
 			}
 		%>
-    	<form id="new_form" method="POST" action="CarnetAdresse">
 		<tr id="add_row">
+			<form id="new_form" method="POST">
 				<td><input type="text" id="new_id" name="new_id" /></td>
 				<td><input type="text" id="new_nom" name="new_nom" /></td>
 				<td><input type="text" id="new_prenom" name="new_prenom" /></td>
-    	<td><input type="text" id="new_telephone" name="new_telephone"/></td>
+				<td><input type="text" id="new_tel" name="new_tel" /></td>
 				<td><input type="text" id="new_dateNaissance"
-    	<td ><button  name="action" value="Ajouter" >Sauvegarder</button></td>
+					name="new_dateNaissance" /></td>
 				<td><input type="submit" name="action" value="Sauvegarder" /></td>
 			</form>
 		</tr>
 	</table>
 	<img id="button_add" src="./add.png" />
+=======
+<%
+if(request.getAttribute("message")!=null){
+	%>
+	<%=request.getAttribute("message") %>
+	<%
+}
+
+%>
+<button id="ajouter">Ajouter</button>
+<table id ="tableauBean">
+	<tr>
+		<td>ID</td>
+		<td>Nom</td>
+		<td>Prénom</td>
+		<td>Telephone</td>
+		<td>Anniversaire</td>
+		<td>Action</td>
+	</tr>
+	<% List<Personne> liste = (ArrayList<Personne>)request.getAttribute("carnet"); 
+    for ( int i = 0; i < liste.size(); i++ ) {
+    %>
+    <tr>
+    	<form id="form_<%=liste.get(i).getId() %>" method="POST">
+	    	<td><input type="text" id="id_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getId() %>" name="id" readonly/></td>
+	    	<td><input type="text" id="nom_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getNom() %>" name ="nom"/></td>
+	    	<td><input type="text" id="prenom_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getPrenom() %>" name ="prenom"/> </td>
+	    	<td><input type="text" id="tel_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getTelephone() %>" name ="telephone"/></td>
+	    	<td><input type="text" id="dateNaissance_<%=liste.get(i).getId() %>" value="<%=liste.get(i).getDateNaissance() %>" name ="dateNaissance"/></td>
+	    	<td><input type="submit" name="action" value = "Supprimer">
+	    	<input type="submit" name="action" value="Modifier" ></td>
+    	</form>
+    </tr>    
+    <%}%>
+    <tr>
+    	<form id="new_form" method="POST" action="CarnetAdresse">
+    	<td class="cache"><input type="text" id="new_id" name="new_id"/></td>
+    	<td class="cache"><input type="text" id="new_nom" name="new_nom"/></td>
+    	<td class="cache"><input type="text" id="new_prenom" name="new_prenom"/> </td>
+    	<td class="cache"><input type="text" id="new_telephone" name="new_telephone"/></td>
+    	<td class="cache"><input type="text" id="new_dateNaissance" name="new_dateNaissance"/></td>
+    	<td class="cache"><button  name="action" value="Ajouter" >Sauvegarder</button></td>
+    	</form>
+    </tr>
+</table>
+>>>>>>> 874df6c1b7a0e21f5cda7f99bdbdf7e32411c376
 
 </body>
 </html>
