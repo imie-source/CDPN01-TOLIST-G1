@@ -15,6 +15,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+TEST
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#add_row').hide();
