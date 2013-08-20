@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<button id="ajouter"></button>
+<button id="ajouter">Ajouter</button>
 <table id ="tableauBean">
 	<tr>
 		<td>Nom</td>
@@ -42,7 +42,7 @@
     	<td><input type="text" id="prenom_<%=i %>" value="<%=liste.get(i).getPrenom() %>" /> </td>
     	<td><input type="text" id="tel_<%=i %>" value="<%=liste.get(i).getTelephone() %>"/></td>
     	<td><input type="text" id="dateNaissance_<%=i %>" value="<%=liste.get(i).getDateNaissance() %>" /></td>
-    	<td><button class="supp"></button><button class="modif"></button></td>
+    	<td><button class="supp">Supprimer</button><button class="modif">Modifier</button></td>
     </tr>    
     <%}%>
     <tr>
