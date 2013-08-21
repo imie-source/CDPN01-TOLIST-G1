@@ -10,10 +10,12 @@ public class RandomTests {
     assertTrue(42 == 42);
   }
 
+  @Test
   public void testB() {
     assertTrue(6 * 8 == 42);
   }
 
+  @Test
   public void testC() {
     assertTrue(84 / 2 == 42);
   }
