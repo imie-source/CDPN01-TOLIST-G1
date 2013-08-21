@@ -56,7 +56,10 @@ public class IMIEAdressBookTest {
 		IMIEAddressBook ad = new IMIEAddressBook();
 		String newId = ad.addPerson("BOB", "CARRE", "06060666666", "21/12/1989");
 		
-		ad.modifierPerson(newId, new Personne("BOB", "BOB", "06060666666", "21/12/1989"));
+		Personne tmp = new Personne("BOB", "BOB", "06060666666", "21/12/1989");
+		tmp.setId(newId);
+		
+		ad.modifierPerson(newId, tmp);
 		
 		List<Personne> liste = (ArrayList<Personne>) ad.getPeople();
 		Personne personneTest = liste.get(liste.size()-1);
