@@ -17,7 +17,7 @@ import controller.IMIEAddressBook;
 public class Sample {
 
 	@Test
-	public void emptyPeople() {
+	public void testEmptyPeople() {
 		// Asset
 		IMIEAddressBook book = new IMIEAddressBook(); 
 		List<Personne> collection = new ArrayList<Personne>();
@@ -29,14 +29,14 @@ public class Sample {
 	}
 	
 	@Test
-	public void addPerson() {
+	public void testAddPerson() {
 		// Asset
 		IMIEAddressBook book = new IMIEAddressBook(); 
 		List<Personne> collection = new ArrayList<Personne>();
 		collection.add(new Personne("L'éponge", "Bob", "06.23.23.23.23", "21/08/2013"));
 		
 		// Act
-		book.addPerson("L'éponge", "Bob", "06.23.23.23.23", "21/08/2013");
+		//book.addPerson("L'éponge", "Bob", "06.23.23.23.23", "21/08/2013");
 		
 		// Assert
 		assertEquals(collection.get(0).getNom(), ((List<Personne>) book.getPeople()).get(0).getNom());
