@@ -35,7 +35,7 @@ public class PersonneTest {
 		Personne per = new Personne(null, null, null, null);
 		per.setNom("bobo");
 		assertEquals(per.getNom(),"bobo");
-		fail("ça doit aps marcher");
+		
 		
 	}
 
