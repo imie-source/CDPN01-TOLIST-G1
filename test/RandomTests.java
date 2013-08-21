@@ -12,7 +12,7 @@ public class RandomTests {
 
   @Test
   public void testB() {
-    assertTrue(6 * 8 == 42);
+    assertTrue(6 * 7 == 42);
   }
 
   @Test
