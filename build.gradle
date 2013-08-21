@@ -1,7 +1,18 @@
 version = '1.0.0-SNAPSHOT'
 
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'org.gradle.api.plugins:gradle-cargo-plugin:0.6.1'
+    }
+}
+
 apply plugin: 'java'
 apply plugin: 'war'
+apply plugin: 'cargo'
 
 sourceCompatibility  = 1.6
 
@@ -39,7 +50,23 @@ dependencies {
     providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.0.Final'
     testCompile group: 'junit', name: 'junit', version: '4.+'
     testCompile 'org.mockito:mockito-core:1.9.5'
+    cargo "org.codehaus.cargo:cargo-core-uberjar:1.3.3",
+          "org.codehaus.cargo:cargo-ant:1.3.3",
+          "org.jboss.as:jboss-as-controller-client:7.1.1.Final"
 } 
 
 
+cargo {
+  containerId = 'jboss71x'
+  port = 9990
+  hostname = "localhost"
+  username = "bondour"
+  password = "gravier"
+  remote {
+    username = "bondour"
+    password = "gravier"
+    hostname = "localhost"
+    port = 9990
+  }
+}
 
