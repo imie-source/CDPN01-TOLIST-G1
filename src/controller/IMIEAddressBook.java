@@ -7,9 +7,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import junit.framework.TestCase;
-
-public class IMIEAddressBook extends TestCase implements AddressBook {
+public class IMIEAddressBook implements AddressBook {
 
     private static Map<String, Personne> people = new HashMap<String, Personne>();
 
