@@ -27,6 +27,7 @@ sourceSets {
 
 war {
 	from "WebContent"
+	dependsOn "test"
 }
 
 
