@@ -2,6 +2,7 @@ version = '1.0.0-SNAPSHOT'
 
 apply plugin: 'java'
 apply plugin: 'war'
+apply plugin: 'cargo'
 
 sourceCompatibility  = 1.6
 
@@ -34,7 +35,16 @@ dependencies {
     providedCompile 'org.jboss.spec.javax.servlet:jboss-servlet-api_3.0_spec:1.0.0.Final'
     testCompile group: 'junit', name: 'junit', version: '4.+'
     testCompile 'org.mockito:mockito-core:1.9.5'
+    cargo 'org.codehaus.cargo:cargo-core-uberjar:1.1.1',
+          'org.codehaus.cargo:cargo-ant:1.1.1',
+          'jaxen:jaxen:1.1.1'
 } 
+
+buildscript {
+    dependencies {
+        classpath 'bmuschko:gradle-cargo-plugin:0.3'
+    }
+}
 
 war {
     from 'WebContent' // adds a file-set to the root of the archive
@@ -43,4 +53,15 @@ war {
 }
 
 war.dependsOn test
+
+cargo {
+    containerId = 'JBoss 7.1.x'
+    port = 8080
+    context = 'mycontext'
+    remote {
+        hostname = 'localhost'
+        username = 'imie'
+        password = 'imie'
+    }
+}
 
