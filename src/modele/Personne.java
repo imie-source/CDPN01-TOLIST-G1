@@ -21,6 +21,9 @@ public class Personne {
     public String getId() {
         return this.id;
     }
+    public void setNom(String nom){
+        this.nom=nom;
+    }
 
     public String getNom() {
         return this.nom;
