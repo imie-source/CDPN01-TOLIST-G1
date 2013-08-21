@@ -53,7 +53,16 @@ public class IMIEAdressBookTest {
 
 	@Test
 	public void testModifierPerson() {
-		//fail("Not yet implemented"); // TODO
+		IMIEAddressBook ad = new IMIEAddressBook();
+		String newId = ad.addPerson("BOB", "CARRE", "06060666666", "21/12/1989");
+		
+		ad.modifierPerson(newId, new Personne("BOB", "BOB", "06060666666", "21/12/1989"));
+		
+		List<Personne> liste = (ArrayList<Personne>) ad.getPeople();
+		Personne personneTest = liste.get(liste.size()-1);
+		
+		assertEquals("Nom correct ?", "BOB", personneTest.getNom());
+		assertEquals("Prenom correct ?", "CARRE", personneTest.getPrenom());
 	}
 
 }
