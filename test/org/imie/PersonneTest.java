@@ -36,7 +36,6 @@ public class PersonneTest {
 		per.setNom("bobo");
 		assertEquals(per.getNom(),"bobo");
 		
-		
 	}
 
 }
