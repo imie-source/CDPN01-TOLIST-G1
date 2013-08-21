@@ -60,9 +60,15 @@ public class IMIEAdressBookTest {
 		tmp.setId(newId);
 		
 		ad.modifierPerson(newId, tmp);
-		
 		List<Personne> liste = (ArrayList<Personne>) ad.getPeople();
-		Personne personneTest = liste.get(liste.size()-1);
+		
+		Personne personneTest =null;
+		
+		for(Personne p : liste) {
+		    if(p.getId() != null && p.getId().equals(newId)) {
+		       personneTest = p;
+		     }
+		}
 		
 		assertEquals("Nom correct ?", "BOB", personneTest.getNom());
 		//assertEquals("Prenom correct ?", "CARRE", personneTest.getPrenom());
