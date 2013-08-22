@@ -20,6 +20,7 @@ import controller.IMIEAddressBook;
 public class CarnetAdresse extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static AddressBook iab = new IMIEAddressBook();
+	private static String action = "action";
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
@@ -50,8 +51,8 @@ public class CarnetAdresse extends HttpServlet {
 	}
 
 	public void traiter (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		if(request.getParameter("action")!=null){
-			if("Ajouter".equals(request.getParameter("action"))){
+		if(request.getParameter(action)!=null){
+			if("Ajouter".equals(request.getParameter(action))){
 				String nom = request.getParameter("new_nom");
 				String prenom = request.getParameter("new_prenom");
 				String telephone = request.getParameter("new_telephone");
@@ -66,10 +67,10 @@ public class CarnetAdresse extends HttpServlet {
 						request.setAttribute("error",001);//Code erreur création de personne
 					}
 				}
-			}else if("Supprimer".equals(request.getParameter("action"))){
+			}else if("Supprimer".equals(request.getParameter(action))){
 				iab.removePerson(request.getParameter("id"));
 
-			}else if("Modifier".equals(request.getParameter("action"))){
+			}else if("Modifier".equals(request.getParameter(action))){
 				Personne per = new Personne(request.getParameter("nom").toString(), request.getParameter("prenom").toString(), request.getParameter("telephone").toString(), request.getParameter("dateNaissance").toString());
 				String id = request.getParameter("id");
 				per.setId(id);
