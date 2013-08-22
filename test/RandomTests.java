@@ -19,4 +19,9 @@ public class RandomTests {
   public void testC() {
     assertTrue(84 / 2 == 42);
   }
+
+  @Test
+  public void testD() {
+    assertTrue("coquetterie" == "classe")
+  }
 }
