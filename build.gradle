@@ -60,11 +60,11 @@ cargo {
   containerId = 'jboss71x'
   port = 9990
   hostname = "localhost"
-  username = "bondour"
-  password = "gravier"
+  username = "imie"
+  password = "temp"
   remote {
-    username = "bondour"
-    password = "gravier"
+    username = "imie"
+    password = "temp"
     hostname = "localhost"
     port = 9990
   }
