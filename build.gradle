@@ -72,5 +72,5 @@ cargo {
 
 }
 
-cargo.dependsOn war
-
+cargoDeployRemote.dependsOn war
+cargoDeployRemote.dependsOn cargoUndeployRemote
