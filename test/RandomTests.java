@@ -22,6 +22,6 @@ public class RandomTests {
 
   @Test
   public void testD() {
-    assertTrue("coquetterie" == "classe")
+    assertTrue("coquetterie" == "classe");
   }
 }
