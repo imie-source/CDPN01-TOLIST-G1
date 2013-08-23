@@ -74,12 +74,11 @@ cargo {
 
 }
 
-cargoUndeployRemote {
-  ignoreFailures = true
-}
 
- sonarRunner.dependsOn war
-	cargoDeployRemote.dependsOn sonarRunner
+cargoDeployRemote.dependsOn sonarRunner
+
+
+
 sonar {
     server {
         url = "http://localhost"
@@ -94,12 +93,13 @@ sonar {
 }
 sonarRunner{
  sonarProperties {
-property "sonar.projectName", "Simple Java Gradle Project"
+	property "sonar.projectName", "Simple Java Gradle Project"
         property "sonar.projectKey", "org.codehaus.sonar:IMIE-TOLIST-G1"
         property "sonar.jdbc.url", "jdbc:h2:tcp://localhost/sonar"
         property "sonar.host.url", "http://localhost:9000"
         property "sonar.jdbc.username", "sonar"
         property "sonar.jdbc.password", "sonar"
         }
+        
    }
 
