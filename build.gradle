@@ -74,8 +74,12 @@ cargo {
 
 }
 
+cargoUndeployRemote {
+  ignoreFailures = true
+}
 
-
+ sonarRunner.dependsOn war
+	cargoDeployRemote.dependsOn sonarRunner
 sonar {
     server {
         url = "http://localhost"
@@ -99,9 +103,3 @@ property "sonar.projectName", "Simple Java Gradle Project"
         }
    }
 
-subprojects {
-    afterEvaluate{
-        sonarRunner.dependsOn war
-	cargoDeployRemote.dependsOn sonarRunner
-    }
-}
