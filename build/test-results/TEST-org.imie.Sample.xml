@@ -1,8 +1,8 @@
 <?xml version="1.1" encoding="UTF-8"?>
-<testsuite name="org.imie.Sample" tests="2" failures="0" errors="0" timestamp="2013-08-21T14:22:02" hostname="imie-VirtualBox" time="0.022">
+<testsuite name="org.imie.Sample" tests="2" failures="0" errors="0" timestamp="2013-08-23T14:28:52" hostname="imie-VirtualBox" time="0.012">
   <properties/>
-  <testcase name="test" classname="org.imie.Sample" time="0.007"/>
-  <testcase name="test2" classname="org.imie.Sample" time="0.007"/>
+  <testcase name="test" classname="org.imie.Sample" time="0.002"/>
+  <testcase name="test2" classname="org.imie.Sample" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

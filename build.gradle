@@ -3,6 +3,8 @@ version = '1.0.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'cargo'
+apply plugin: "sonar"
+apply plugin: "sonar-runner"
 sourceCompatibility  = 1.6
 
 sourceSets {
@@ -72,4 +74,29 @@ cargo {
 
 }
 
-cargoDeployRemote.dependsOn war
+
+
+sonar {
+    server {
+        url = "http://localhost"
+    }
+    database {
+        url = "jdbc:h2:tcp://localhost/sonar"
+	driverClassName = "org.h2.Driver"
+        username="sonar"
+        password="sonar"
+    }
+	
+}
+sonarRunner{
+ sonarProperties {
+property "sonar.projectName", "Simple Java Gradle Project"
+        property "sonar.projectKey", "org.codehaus.sonar:IMIE-TOLIST-G1"
+        property "sonar.jdbc.url", "jdbc:h2:tcp://localhost/sonar"
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.jdbc.username", "sonar"
+        property "sonar.jdbc.password", "sonar"
+        }
+   }
+sonarRunner.dependsOn war
+cargoDeployRemote.dependsOn sonarRunner
