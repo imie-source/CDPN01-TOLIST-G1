@@ -75,7 +75,7 @@ cargo {
 }
 
 
-cargoDeployRemote.dependsOn sonarRunner
+cargoDeployRemote.dependsOn war
 
 
 
