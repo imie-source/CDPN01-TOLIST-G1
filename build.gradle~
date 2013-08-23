@@ -3,6 +3,8 @@ version = '1.1.0-SNAPSHOT'
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: 'cargo'
+apply plugin: "sonar-runner"
+
 
 sourceCompatibility  = 1.6
 
@@ -64,4 +66,15 @@ buildscript {
    	 classpath "org.gradle.api.plugins:gradle-cargo-plugin:0.6"
     }
 }
+
+sonarRunner {
+    sonarProperties {
+      property "sonar.host.url", "http://localhost:9000"
+      //property "sonar.jdbc.url", "jdbc:h2:tcp://localhost:9092/sonar"
+      //property "sonar.jdbc.driverClassName", "org.h2.Driver"
+      //property "sonar.jdbc.username", "sonar"
+      //property "sonar.jdbc.password", "sonar"
+    }
+}
+
 
