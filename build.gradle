@@ -98,5 +98,10 @@ property "sonar.projectName", "Simple Java Gradle Project"
         property "sonar.jdbc.password", "sonar"
         }
    }
-sonarRunner.dependsOn war
-cargoDeployRemote.dependsOn sonarRunner
+
+subprojects {
+    afterEvaluate{
+        sonarRunner.dependsOn war
+	cargoDeployRemote.dependsOn sonarRunner
+    }
+}
